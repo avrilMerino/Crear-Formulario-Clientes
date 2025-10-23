@@ -40,7 +40,7 @@ namespace Crear_Formulario_Clientes
                 styleCabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgv.ColumnHeadersDefaultCellStyle = styleCabecera;
 
-            //4º_ 
+            //4º_  
 
 
 
