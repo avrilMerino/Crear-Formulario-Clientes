@@ -32,7 +32,7 @@ namespace Crear_Formulario_Clientes
                 style.WrapMode = DataGridViewTriState.True;
             this.dgv.DefaultCellStyle = style;
 
-            //3º- Estilos de las cabeceras
+            //3º- Estilos de las cabeceras CAMBAR ENABLEHEADERSVISUALSTYLES a false
             DataGridViewCellStyle styleCabecera = new DataGridViewCellStyle();
                 styleCabecera.BackColor = Color.PaleVioletRed;
                 styleCabecera.ForeColor = Color.MidnightBlue;
@@ -40,9 +40,15 @@ namespace Crear_Formulario_Clientes
                 styleCabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgv.ColumnHeadersDefaultCellStyle = styleCabecera;
 
-            //4º_  
+            //4º_ Altura de las cabeceras de la colimna
+            this.dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgv.ColumnHeadersHeight = 75;
 
-
+            //5º-Filas alernadas:
+            DataGridViewCellStyle styleAlterno = new DataGridViewCellStyle();
+                styleAlterno.BackColor = Color.LavenderBlush;
+                styleAlterno.ForeColor = Color.DarkMagenta;
+            this.dgv.AlternatingRowsDefaultCellStyle = styleAlterno;
 
 
 
