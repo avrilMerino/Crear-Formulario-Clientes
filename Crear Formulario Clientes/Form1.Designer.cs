@@ -51,6 +51,7 @@
             this.dgvIngresos,
             this.dgvCodigo});
             this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv.Location = new System.Drawing.Point(25, 31);
             this.dgv.Name = "dgv";
