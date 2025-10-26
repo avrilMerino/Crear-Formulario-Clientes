@@ -20,11 +20,11 @@ namespace Crear_Formulario_Clientes
             this.dgv.CellDoubleClick += new DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
 
             //1º- Añadir filas al DataGridView (dgv) de forma manual
-            dgv.Rows.Add("Avril", "Merino", "Moreno", "12345678A", "Calle Barcelona 123", "25000", "001", "A");
-            dgv.Rows.Add("Aarón", "Quevedo", "Latorre", "87654321B", "Calle Linares", "30000", "002", "B");
-            dgv.Rows.Add("Alejandro", "Castillo", "Durillo", "11223344C", "Calle Bailén", "28000", "003", "B");
-            dgv.Rows.Add("Javier", "González", "Cañas", "44332211D", "Calle Suiza", "32000", "004", "A");
-            dgv.Rows.Add("Andrés", "Merino", "Moreno", "55667788E", "Calle Salamanca", "29000", "005", "C");
+            dgv.Rows.Add("Avril", "Merino", "Moreno", "123456789", "Calle Barcelona 123", "25000", "001", "A");
+            dgv.Rows.Add("Aarón", "Quevedo", "Latorre", "098765432", "Calle Linares", "30000", "002", "B");
+            dgv.Rows.Add("Alejandro", "Castillo", "Durillo", "264534291", "Calle Bailén", "28000", "003", "B");
+            dgv.Rows.Add("Javier", "González", "Cañas", "936648153", "Calle Suiza", "32000", "004", "A");
+            dgv.Rows.Add("Andrés", "Merino", "Moreno", "036661934", "Calle Salamanca", "29000", "005", "C");
 
             //2º- Ajustar el tamaño de las columnas al contenido
             DataGridViewCellStyle style = new DataGridViewCellStyle();
@@ -127,10 +127,18 @@ namespace Crear_Formulario_Clientes
             if (e.RowIndex < 0) return; //Asi me salto la cabecera para no editarla
             var row = dgv.Rows[e.RowIndex];
 
-            Form2 f2 = new Form2(row);
-            f2.CargarFila(row);
+            Form2 f2 = new Form2(this, row); 
+
             f2.ShowDialog();
 
         }
+        public void EliminarFila(DataGridViewRow fila)
+        {
+            if (fila != null)
+            {
+                dgv.Rows.Remove(fila);
+            }
+        }
+
     }
 }

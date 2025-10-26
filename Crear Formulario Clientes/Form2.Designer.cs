@@ -42,8 +42,8 @@
             this.lblDireccion = new System.Windows.Forms.TextBox();
             this.lblIngresos = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.lblTipoCliente = new System.Windows.Forms.Label();
             this.comboBoxTIpoCliente = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -127,7 +127,7 @@
             // 
             this.lblNombre.Location = new System.Drawing.Point(174, 33);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(121, 20);
+            this.lblNombre.Size = new System.Drawing.Size(144, 20);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.TextChanged += new System.EventHandler(this.lblNombre_TextChanged);
             // 
@@ -135,65 +135,65 @@
             // 
             this.lblApellido1.Location = new System.Drawing.Point(174, 59);
             this.lblApellido1.Name = "lblApellido1";
-            this.lblApellido1.Size = new System.Drawing.Size(121, 20);
+            this.lblApellido1.Size = new System.Drawing.Size(144, 20);
             this.lblApellido1.TabIndex = 8;
             // 
             // lblApellido2
             // 
             this.lblApellido2.Location = new System.Drawing.Point(174, 86);
             this.lblApellido2.Name = "lblApellido2";
-            this.lblApellido2.Size = new System.Drawing.Size(121, 20);
+            this.lblApellido2.Size = new System.Drawing.Size(144, 20);
             this.lblApellido2.TabIndex = 9;
             // 
             // lblTelefono
             // 
             this.lblTelefono.Location = new System.Drawing.Point(174, 112);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(121, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(144, 20);
             this.lblTelefono.TabIndex = 10;
             // 
             // lblDireccion
             // 
             this.lblDireccion.Location = new System.Drawing.Point(174, 138);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(121, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(144, 20);
             this.lblDireccion.TabIndex = 11;
             // 
             // lblIngresos
             // 
             this.lblIngresos.Location = new System.Drawing.Point(174, 164);
             this.lblIngresos.Name = "lblIngresos";
-            this.lblIngresos.Size = new System.Drawing.Size(121, 20);
+            this.lblIngresos.Size = new System.Drawing.Size(144, 20);
             this.lblIngresos.TabIndex = 12;
             // 
             // lblCodigo
             // 
             this.lblCodigo.Location = new System.Drawing.Point(174, 237);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(121, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(144, 20);
             this.lblCodigo.TabIndex = 13;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(330, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 32);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Agregar Cliente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(366, 168);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(128, 32);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.Text = "Agregar Cliente";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // button2
+            // btnGuardarCambios
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(330, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Guardar Cambios";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambios.Location = new System.Drawing.Point(366, 55);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(128, 32);
+            this.btnGuardarCambios.TabIndex = 15;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // lblTipoCliente
             // 
@@ -214,19 +214,19 @@
             "C"});
             this.comboBoxTIpoCliente.Location = new System.Drawing.Point(174, 194);
             this.comboBoxTIpoCliente.Name = "comboBoxTIpoCliente";
-            this.comboBoxTIpoCliente.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTIpoCliente.Size = new System.Drawing.Size(144, 21);
             this.comboBoxTIpoCliente.TabIndex = 17;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(330, 112);
+            this.btnEliminar.Location = new System.Drawing.Point(366, 112);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(128, 32);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar Cliente";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.button3_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Form2
             // 
@@ -237,8 +237,8 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.comboBoxTIpoCliente);
             this.Controls.Add(this.lblTipoCliente);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardarCambios);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblIngresos);
             this.Controls.Add(this.lblDireccion);
@@ -278,8 +278,8 @@
         private System.Windows.Forms.TextBox lblDireccion;
         private System.Windows.Forms.TextBox lblIngresos;
         private System.Windows.Forms.TextBox lblCodigo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.Label lblTipoCliente;
         private System.Windows.Forms.ComboBox comboBoxTIpoCliente;
         private System.Windows.Forms.Button btnEliminar;
