@@ -83,7 +83,7 @@ namespace Crear_Formulario_Clientes
 
                 if (resultado == DialogResult.Yes)//ps en funcion del resultado hace una cosa u otra
                 {
-                    formularioPadre.EliminarFila(filaSeleccionada);
+                    formularioPadre.EliminarFila(filaSeleccionada); //se llama al metodo del formulario padre
 
                     MessageBox.Show(
                         "Cliente eliminado correctamente.",
@@ -111,7 +111,87 @@ namespace Crear_Formulario_Clientes
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-
+            // Actualizar la fila seleccionada con los nuevos valores
+            if (filaSeleccionada != null)
+            {
+                //todos los campos obligatorios
+                if (lblNombre.Text=="" || lblApellido1.Text=="" || lblTelefono.Text=="" || lblDireccion.Text=="" || lblIngresos.Text=="" || lblCodigo.Text=="" || comboBoxTIpoCliente.Text=="")
+                {
+                    MessageBox.Show(
+                        "No puedes dejar campos vacíos.",
+                        "Rellena todos los campos",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                if (lblNombre.Text.Any(char.IsDigit) || lblApellido1.Text.Any(char.IsDigit) || lblApellido2.Text.Any(char.IsDigit))
+                {
+                    MessageBox.Show(
+                        "El nombre completo no puede contener números.",
+                        "Error en el nombre",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                if (!lblTelefono.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show(
+                        "El teléfono solo puede contener números.",
+                        "Error en el teléfono",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                decimal ingresosDecimal;
+                var ingresosTexto = lblIngresos.Text.Replace(',', '.');
+                if (!decimal.TryParse(ingresosTexto, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out ingresosDecimal))
+                {
+                    MessageBox.Show(
+                        "Los ingresos deben ser numéricos.",
+                        "Error en los ingresos",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                if (!lblCodigo.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show(
+                        "El código debe contener solo números.",
+                        "Error en el código",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                if (!(comboBoxTIpoCliente.Text == "A" || comboBoxTIpoCliente.Text == "B" || comboBoxTIpoCliente.Text == "C"))
+                {
+                    MessageBox.Show(
+                        "Tipo de cliente DEBE SER: A, B o C.",
+                        "Error en el tipo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+                filaSeleccionada.Cells[0].Value = lblNombre.Text;
+                filaSeleccionada.Cells[1].Value = lblApellido1.Text;
+                filaSeleccionada.Cells[2].Value = lblApellido2.Text;
+                filaSeleccionada.Cells[3].Value = lblTelefono.Text;
+                filaSeleccionada.Cells[4].Value = lblDireccion.Text;
+                filaSeleccionada.Cells[5].Value = ingresosDecimal; 
+                filaSeleccionada.Cells[6].Value = lblCodigo.Text;
+                filaSeleccionada.Cells[7].Value = comboBoxTIpoCliente.Text;
+                MessageBox.Show(
+                    "Cambios guardados correctamente.",
+                    "Guardado completado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
     }
 }

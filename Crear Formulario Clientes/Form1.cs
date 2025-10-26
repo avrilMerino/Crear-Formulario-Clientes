@@ -132,7 +132,7 @@ namespace Crear_Formulario_Clientes
             f2.ShowDialog();
 
         }
-        public void EliminarFila(DataGridViewRow fila)
+        public void EliminarFila(DataGridViewRow fila) //aquí se elimina verdaderamentre la fila
         {
             if (fila != null)
             {
