@@ -31,5 +31,10 @@ namespace Crear_Formulario_Clientes
         {
 
         }
+
+        private void lblNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

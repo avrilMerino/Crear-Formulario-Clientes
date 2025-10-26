@@ -36,6 +36,7 @@
             this.dgvDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvIngresos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,13 +50,14 @@
             this.dgvNumero,
             this.dgvDireccion,
             this.dgvIngresos,
-            this.dgvCodigo});
+            this.dgvCodigo,
+            this.dgvTipoCliente});
             this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgv.Location = new System.Drawing.Point(25, 31);
+            this.dgv.Location = new System.Drawing.Point(12, 23);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(818, 380);
+            this.dgv.Size = new System.Drawing.Size(911, 380);
             this.dgv.TabIndex = 1;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
@@ -94,11 +96,16 @@
             this.dgvCodigo.HeaderText = "Código";
             this.dgvCodigo.Name = "dgvCodigo";
             // 
+            // dgvTipoCliente
+            // 
+            this.dgvTipoCliente.HeaderText = "Tipo de Cliente";
+            this.dgvTipoCliente.Name = "dgvTipoCliente";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 450);
+            this.ClientSize = new System.Drawing.Size(971, 450);
             this.Controls.Add(this.dgv);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -117,6 +124,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvIngresos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTipoCliente;
     }
 }
 

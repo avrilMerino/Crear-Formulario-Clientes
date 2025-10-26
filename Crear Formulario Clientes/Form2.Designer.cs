@@ -115,6 +115,7 @@
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(100, 20);
             this.lblNombre.TabIndex = 7;
+            this.lblNombre.TextChanged += new System.EventHandler(this.lblNombre_TextChanged);
             // 
             // lblApellido1
             // 
