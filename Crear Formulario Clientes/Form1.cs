@@ -15,6 +15,10 @@ namespace Crear_Formulario_Clientes
         public Form1()
         {
             InitializeComponent();
+
+            //LÍNEA IMPORTANTISIMA PARA QUE SE DESPLIEGUE EL OTRO FORMULARIO: q si no, no va
+            this.dgv.CellDoubleClick += new DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
+
             //1º- Añadir filas al DataGridView (dgv) de forma manual
             dgv.Rows.Add("Avril", "Merino", "Moreno", "12345678A", "Calle Barcelona 123", "25000", "001", "A");
             dgv.Rows.Add("Aarón", "Quevedo", "Latorre", "87654321B", "Calle Linares", "30000", "002", "B");
@@ -119,9 +123,14 @@ namespace Crear_Formulario_Clientes
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //aqui tengo que desplegar el otro formulario que se llama form2
-            Form2 f2 = new Form2();
+            //DESPLIGUE DEL FORM2
+            if (e.RowIndex < 0) return; //Asi me salto la cabecera para no editarla
+            var row = dgv.Rows[e.RowIndex];
+
+            Form2 f2 = new Form2(row);
+            f2.CargarFila(row);
             f2.ShowDialog();
+
         }
     }
 }
