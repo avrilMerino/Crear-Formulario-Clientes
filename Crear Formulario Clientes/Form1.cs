@@ -139,6 +139,11 @@ namespace Crear_Formulario_Clientes
                 dgv.Rows.Remove(fila);
             }
         }
+        //aquí se agrega la fila nueva al dgv
+        public void AgregarFila(string nombre, string apellido1, string apellido2, string telefono, string direccion, decimal ingresos, string codigo, string tipo)
+        {
+            dgv.Rows.Add(nombre, apellido1, apellido2, telefono, direccion, ingresos, codigo, tipo);
+        }
 
     }
 }

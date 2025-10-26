@@ -66,8 +66,106 @@ namespace Crear_Formulario_Clientes
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            // Validaciones básicas (igual que en Guardar)
+            if (lblNombre.Text == "" || lblApellido1.Text == "" || lblTelefono.Text == "" || lblDireccion.Text == "" || lblIngresos.Text == "" || lblCodigo.Text == "" || comboBoxTIpoCliente.Text == "")
+            {
+                MessageBox.Show(
+                    "No puedes dejar campos vacíos.",
+                    "Rellena todos los campos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            if (lblNombre.Text.Any(char.IsDigit) || lblApellido1.Text.Any(char.IsDigit) || lblApellido2.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show(
+                    "El nombre completo no puede contener números.",
+                    "Error en el nombre",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            if (!lblTelefono.Text.All(char.IsDigit))
+            {
+                MessageBox.Show(
+                    "El teléfono solo puede contener números.",
+                    "Error en el teléfono",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            decimal ingresosDecimal;
+            var ingresosTexto = lblIngresos.Text.Replace(',', '.');
+            if (!decimal.TryParse(ingresosTexto, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out ingresosDecimal))
+            {
+                MessageBox.Show(
+                    "Los ingresos deben ser numéricos.",
+                    "Error en los ingresos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            if (!lblCodigo.Text.All(char.IsDigit))
+            {
+                MessageBox.Show(
+                    "El código debe contener solo números.",
+                    "Error en el código",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            if (!(comboBoxTIpoCliente.Text == "A" || comboBoxTIpoCliente.Text == "B" || comboBoxTIpoCliente.Text == "C"))
+            {
+                MessageBox.Show(
+                    "Tipo de cliente debe ser A, B o C.",
+                    "Error en el tipo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            //para crear la nueva fila en el DGV de Form1 (sin tocar el DGV desde Form2)
+            formularioPadre.AgregarFila(
+                lblNombre.Text,
+                lblApellido1.Text,
+                lblApellido2.Text,
+                lblTelefono.Text,
+                lblDireccion.Text,
+                ingresosDecimal,
+                lblCodigo.Text,
+                comboBoxTIpoCliente.Text
+            );
+
+            MessageBox.Show(
+                "Cliente agregado correctamente.",
+                "Alta completada",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            //limpiar campos para que no quede relleno con la fila anterior
+            lblNombre.Text = "";
+            lblApellido1.Text = "";
+            lblApellido2.Text = "";
+            lblTelefono.Text = "";
+            lblDireccion.Text = "";
+            lblIngresos.Text = "";
+            lblCodigo.Text = "";
+            comboBoxTIpoCliente.SelectedIndex = -1;
 
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
