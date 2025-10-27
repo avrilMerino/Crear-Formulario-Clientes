@@ -135,7 +135,7 @@ namespace Crear_Formulario_Clientes
                 return;
             }
 
-            //para crear la nueva fila en el DGV de Form1 (sin tocar el DGV desde Form2)
+            //para crear la nueva fila en el DGV de Form1
             formularioPadre.AgregarFila(
                 lblNombre.Text,
                 lblApellido1.Text,
